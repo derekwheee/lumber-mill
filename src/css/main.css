@@ -1,0 +1,129 @@
+body {
+    max-width: 45em;
+    margin: 2em auto;
+    font-family: 'Source Code Pro', consolas, monospace;
+    line-height: 1.5;
+}
+  
+h1 {
+    margin: 1rem;
+    text-align: center;
+}
+  
+p {
+    margin: 2em;
+    text-align: justify;
+}
+  
+label {
+    margin-right: 2em;
+}
+  
+input {
+    width: 3em;
+    border: none;
+    border-bottom: 2px solid black;
+    border-radius: 0;
+    margin: 0.5em 0;
+    padding: 0.25em;
+    font-family: inherit;
+    font-size: inherit;
+    text-align: right;
+    -webkit-appearance: none;
+}
+  
+select {
+    min-width: 5em;
+    padding: 0.5em 0;
+    border: 0;
+    border-bottom: 2px solid;
+    border-radius: 0;
+    font-family: inherit;
+    font-size: inherit;
+}
+
+input:focus,
+select:focus {
+    outline: none;
+    border-color: #33f;
+}
+  
+.center {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    margin: 1em;
+    text-align: center;
+}
+  
+.setups {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.setup {
+    margin: 0 2em;
+}
+  
+.setup-field {
+    position: relative;
+}
+  
+.setup-field:after {
+    content: attr(data-unit);
+    position: absolute;
+    left: calc(100% + 0.25em);
+}
+  
+.stock-setup,
+.tool-setup {
+    flex-grow: 1;
+    margin: 2em 0;
+    padding-right: 2.25em;
+}
+
+.stock-setup > div,
+.tool-setup > div {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+    margin: 1em 0;
+}
+  
+.error {
+    width: 100%;
+    text-transform: lowercase;
+    text-align: right;
+    color: red;
+}
+
+button {
+    display: inline-block;
+    width: auto;
+    margin: 0 0.5em 2em;
+    padding: 1em 2em;
+    border: none;
+    background: #33f;
+    font-family: inherit;
+    font-size: inherit;
+    font-weight: bold;
+    text-transform: lowercase;
+    color: white;
+}
+  
+#gcode {
+    padding: 1.5em 2em;
+    border-top: 0.5em solid transparent;
+    background: #f7f7f7;
+    font-size: 1.25em;
+}
+  
+#gcode.is-working {
+    border-top: 0.5em solid red;
+    animation: WORKING alternate infinite 1s;
+}
+  
+  @keyframes WORKING {
+    to { border-top-color: maroon; }
+}
